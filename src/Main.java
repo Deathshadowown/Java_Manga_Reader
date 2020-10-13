@@ -63,6 +63,7 @@ public class Main{
             break;
             }
             System.out.println();
+            System.out.println(fileNames[interateOverFileCount]);
             System.out.println("You have Selected: "+mangaName+" to read enjoy.");
             System.out.println();
             File mangaDirectory = new File("Manga_Folder/"+mangaName);
@@ -70,7 +71,7 @@ public class Main{
             String mangaDirectoryNames[] = mangaDirectory.list();
             
             System.out.println("Manga Chapters inside folder: "+mangaDirectoryCount);
-            mangaDirectoryCount--;
+            // mangaDirectoryCount--;
             // System.out.println();
             System.out.println();
             System.out.println("MangaChapter starts from 0 so if mangachapter has 3 chapters it ends at 2");
@@ -91,13 +92,17 @@ public class Main{
             System.out.println();
             String nextChapter = null;
             int counter = 0;
-            System.out.println("what mangaChapter am i on"+ mangaChapter);
+            System.out.println("what mangaChapter am i on: "+ mangaChapter);
+            System.out.println(mangaDirectoryNames[mangaChapter]+" ChapterName");
             while (mangaChapter <= mangaDirectoryCount){
                 if (counter == 0){
                     File userMangaChapter = new File("Manga_Folder/"+mangaName+"/"+mangaDirectoryNames[mangaChapter]);
                     int userMangaChapterCount = userMangaChapter.list().length;
+                    userMangaChapterCount--;
                     String userMangaChapterName[] = userMangaChapter.list();
-                    String path = "C:\\Users\\Deathshadow\\projects\\Java_Projects\\java_manga_reader\\"+"Manga_Folder\\"+mangaName+"\\"+mangaDirectoryNames[mangaChapter]+"\\"+userMangaChapterName[0];
+                    System.out.println(userMangaChapterName[userMangaChapterCount]);
+                    String path = "C:\\Users\\Deathshadow\\projects\\Java_Projects\\git_repos\\java_manga_reader\\"+"manga_Folder\\"+mangaName+"\\"+mangaDirectoryNames[mangaChapter]+"\\"+userMangaChapterName[0];
+                    System.out.println(path);
                     Runtime.getRuntime().exec("rundll32.exe C:\\WINDOWS\\System32\\shimgvw.dll,ImageView_Fullscreen "+path);
                     mangaChapter++;
                     counter++;
@@ -110,8 +115,10 @@ public class Main{
                 if (nextChapter.toLowerCase().equals("next")){
                     File userMangaChapter = new File("Manga_Folder/"+mangaName+"/"+mangaDirectoryNames[mangaChapter]);
                     int userMangaChapterCount = userMangaChapter.list().length;
+                    userMangaChapterCount--;
                     String userMangaChapterName[] = userMangaChapter.list();
-                    String path = "C:\\Users\\Deathshadow\\projects\\Java_Projects\\java_manga_reader\\"+"Manga_Folder\\"+mangaName+"\\"+mangaDirectoryNames[mangaChapter]+"\\"+userMangaChapterName[0];
+                    String path = "C:\\Users\\Deathshadow\\projects\\Java_Projects\\git_repos\\java_manga_reader\\"+"manga_Folder\\"+mangaName+"\\"+mangaDirectoryNames[mangaChapter]+"\\"+userMangaChapterName[0];
+                    System.out.println(path);
                     Runtime.getRuntime().exec("rundll32.exe C:\\WINDOWS\\System32\\shimgvw.dll,ImageView_Fullscreen "+path);
                     mangaChapter++;
                 }
