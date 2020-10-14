@@ -124,6 +124,7 @@ public class Main{
                     System.out.println();
                     System.out.println("you Reading Chapter: "+ mangaChapter);
                     System.out.println();
+                    System.out.println("Type quit to save progress and quit.");
                     System.out.print("Type next when you done reading your chapter.: ");
                     nextChapter = scan.nextLine();
                     if (nextChapter.toLowerCase().equals("quit")){
@@ -180,6 +181,7 @@ public class Main{
                     System.out.println();
                     System.out.println("you Reading Chapter: "+ mangaChapter);
                     System.out.println();
+                    System.out.println("Type quit to save progress and quit.");
                     System.out.print("Type next when you done reading your chapter.: ");
                     nextChapter = scan.nextLine();
                     if (nextChapter.toLowerCase().equals("quit")){
