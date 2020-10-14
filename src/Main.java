@@ -12,15 +12,12 @@
 
 package src;
 
-// import java.awt.Image;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Collections;
-// import javax.imageio.ImageIO;
-// import java.awt.Desktop;
 
 public class Main{
     public static void main(String[] args){
@@ -211,6 +208,8 @@ public class Main{
             System.out.println("you have reached the end of the manga you reading.");
         } catch (InputMismatchException e){
             System.out.println("Please Enter a valid Chapter Number.");
+        } catch (NumberFormatException e){
+            System.out.println("lastReadChapter file has been tampered with, please remove file from folder.");
         } catch (IOException e){
             System.out.println("Error trying to write to file");
         } catch (Exception e) {
